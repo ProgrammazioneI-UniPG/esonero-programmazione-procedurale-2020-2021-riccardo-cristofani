@@ -67,6 +67,7 @@ int main() {
 
   //controllo ed eseguo una delle due procedure
   while (n_p == 0 || n_p > 2){
+    while (getchar()!='\n');//svuoto il buffer
     printf("\nIl tuo numero %u non è corretto,riprovare \n",n_p);
     scanf("%u",&n_p );
   }
@@ -80,10 +81,12 @@ int main() {
   }
 
 /*cifratura*/
-  for (int i=0; i < Lung_messaggio; i++)
-    str_mes_cifrato[i] = str_messaggio[i] ^ str_chiave[i];
-
-  printf("\nMessaggio cifrato (può contenere caratteri particolari) è:\n");
+  printf("\nMessaggio cifrato, corrispondente in asci di ogni carattere:\n");
+  for (int i=0; i < Lung_messaggio; i++){
+      str_mes_cifrato[i] = str_messaggio[i] ^ str_chiave[i];
+      printf(";%d;",str_mes_cifrato[i] );
+    }
+  printf("\nMessaggio cifrato:\n");
   printf("%s\n",str_mes_cifrato );
 
 /*decifratura*/
