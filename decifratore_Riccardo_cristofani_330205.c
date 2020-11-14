@@ -81,7 +81,7 @@ int main() {
   }
 
 /*cifratura*/
-  printf("\nMessaggio cifrato, corrispondente in asci di ogni carattere:\n");
+  printf("\nMessaggio cifrato, corrispondente in decimale di ogni carattere:\n");
   for (int i=0; i < Lung_messaggio; i++){
       str_mes_cifrato[i] = str_messaggio[i] ^ str_chiave[i];
       printf(";%d;",str_mes_cifrato[i] );
